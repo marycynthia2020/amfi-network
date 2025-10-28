@@ -1,6 +1,6 @@
 const Logo = ({color}: {color: string}) => {
   return (
-   <h2 className="capiatlize text-xl font-bold" style={{color}}>ALMFI Network</h2>
+   <h2 className="capitalize text-2xl font-bold " style={{color}}>almfi network</h2>
   )
 }
 
