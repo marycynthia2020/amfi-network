@@ -1,5 +1,3 @@
-import { BsArrowUpRight } from "react-icons/bs";
-
 interface BtnProps {
   children:string,
   href: string
