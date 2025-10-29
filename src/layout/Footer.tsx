@@ -24,9 +24,8 @@ const Footer = () => {
 
   return (
     <footer
-      className=" mt-10 md:mt-20 py-20 bg-footer-bg text-white "
-      id="contact"
-    >
+      className="mt-20 py-20 bg-footer-bg text-white"
+      id="contact">
       <div className="max-w-[1440px] px-5 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Logo and Contact */}
@@ -35,8 +34,8 @@ const Footer = () => {
             <div className="space-y-2 text-lg opacity-50">
               <div className="flex items-center gap-2 hover:-translate-y-1 transition-transform">
                 <CiMail className="w-4 h-4" />
-                <a href="mailto:info@amfinenetwork.com.com" className="">
-                  info@amfinenetwork.com.com
+                <a href="mailto:info@amfinetwork.com" className="">
+                  info@amfinetwork.com
                 </a>
               </div>
               <div className="flex items-center gap-2 hover:-translate-y-1 transition-transform">
@@ -52,8 +51,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 ">Quick Links</h3>
             <ul className="space-y-2 text-lg opacity-50">
-              {quickLinks.map(link => (
-                <li key={link.name} className="hover:-translate-y-1 transition-transform">
+              {quickLinks.map((link) => (
+                <li
+                  key={link.name}
+                  className="hover:-translate-y-1 transition-transform">
                   <a href={link.href} className="">
                     {link.name}
                   </a>
@@ -66,14 +67,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 ">Useful Links</h3>
             <ul className="space-y-2 text-lg opacity-50">
-              {usefulLinks.map(link => (
-                <li key={link.name}
-                className="hover:-translate-y-1 transition-transform"
-                >
-                    
-                  <a href={link.href} >
-                    {link.name}
-                  </a>
+              {usefulLinks.map((link) => (
+                <li
+                  key={link.name}
+                  className="hover:-translate-y-1 transition-transform">
+                  <a href={link.href}>{link.name}</a>
                 </li>
               ))}
             </ul>
@@ -86,14 +84,13 @@ const Footer = () => {
               Block E, Flat 1, Sky Memorial Complex, Herbert Macauley Way, Wuse
               Zone 5, FCT- Abuja, Nigeria.
             </p>
-            <div className="flex">
+            <div className="flex gap-3">
               {socials.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   className="w-8 h-8 rounded-full  flex items-center justify-center hover:-translate-y-1 transition-transform"
-                  aria-label={social.name}
-                >
+                  aria-label={social.name}>
                   <social.icon className="w-4 h-4" />
                 </a>
               ))}

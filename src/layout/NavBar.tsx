@@ -14,7 +14,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className="w-full inset-x-0 fixed  z-10  md:py-5 px-5 shadow-2xl  bg-white ">
+    <nav className="w-full fixed top-0 inset-x-0 z-50 md:py-5 px-5 shadow-2xl bg-white ">
       <div
         className={`w-full max-w-[1440px] mx-auto  flex md:h-auto flex-col gap-y-14 md:flex-row items-center md:justify-between  ${
           isOpen ? "h-screen" : ""
