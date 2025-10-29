@@ -6,8 +6,9 @@ const config: Config = {
     extend: {
       colors: {
         "deep-blue": "#000c54",
-        orange: "#f38049",
+        "orange": "#f38049",
         "nav-grey": "#babab9",
+        "footer-bg": "#2f2f2f"
       },
       backgroundImage: {
         "hero-image": "url('/hero.jpg')",
