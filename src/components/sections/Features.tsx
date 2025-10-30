@@ -88,7 +88,7 @@ function Slider<T>({
 
   // Clamp index when visible count or items change to avoid overshooting on resize
   useEffect(() => {
-    setIndex((prev) => Math.max(0, Math.min(prev, maxIndex)));
+    setIndex(prev => Math.max(0, Math.min(prev, maxIndex)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentVisible, items.length]);
 
@@ -147,24 +147,27 @@ function Slider<T>({
 
   return (
     <div
-      className={"relative w-full " + (className ?? "")}
+      className={"relative w-full  " + (className ?? "")}
       aria-roledescription="carousel"
       onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}>
+      onMouseLeave={() => setIsHovering(false)}
+    >
       {/* Viewport */}
       <div className="overflow-hidden w-full px-3 py-10">
         {/* Track */}
         <ul
           className="flex transition-transform duration-300 ease-out"
           style={{ transform: `translateX(-${translatePct}%)` }}
-          aria-live="polite">
+          aria-live="polite"
+        >
           {items.map((item, i) => (
             <li
               key={i as number}
               className="shrink-0 box-border px-3"
               style={{ flexBasis: itemBasis }}
               aria-roledescription="slide"
-              aria-label={`Slide ${i + 1} of ${items.length}`}>
+              aria-label={`Slide ${i + 1} of ${items.length}`}
+            >
               {renderItem(item, i)}
             </li>
           ))}
@@ -178,7 +181,8 @@ function Slider<T>({
             type="button"
             onClick={prev}
             aria-label="Previous"
-            className="absolute -left-3 top-1/2 -translate-y-1/2 rounded-full border border-deep-blue bg-indigo-200 text-deep-blue hover:bg-deep-blue hover:text-white transition-colors w-10 h-10 grid place-items-center shadow">
+            className="absolute -left-3 top-1/2 -translate-y-1/2 rounded-full border border-deep-blue bg-gray-100 text-deep-blue hover:bg-deep-blue hover:text-white transition-colors w-10 h-10 grid place-items-center shadow"
+          >
             <span className="sr-only">Previous</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
@@ -188,7 +192,8 @@ function Slider<T>({
             type="button"
             onClick={next}
             aria-label="Next"
-            className="absolute -right-3 top-1/2 -translate-y-1/2 rounded-full border border-deep-blue bg-indigo-200 text-deep-blue hover:bg-deep-blue hover:text-white transition-colors w-10 h-10 grid place-items-center shadow">
+            className="absolute -right-3 top-1/2 -translate-y-1/2 rounded-full border border-deep-blue bg-gray-100 text-deep-blue hover:bg-deep-blue hover:text-white transition-colors w-10 h-10 grid place-items-center shadow"
+          >
             <span className="sr-only">Next</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
@@ -224,15 +229,15 @@ function Slider<T>({
 const FeatureCard = ({ title, description, icon }: Feature) => {
   const Icon = icon;
   return (
-    <article className="group h-full rounded-xl p-5 transition-all duration-400 ease-out hover:shadow-sm flex items-center flex-col hover:scale-110 shadow-amber-500 hover:bg-linear-to-br from-indigo-50">
-      <div className="mb-3 h-10 w-10 rounded-lg bg-orange/80 grid place-items-center text-deep-blue font-bold">
+    <article className="group border-2 border-gray-300  h-full rounded-xl p-5 transition-all duration-400 ease-out hover:shadow-sm flex items-center flex-col hover:scale-110 shadow-amber-500">
+      <div className="mb-6 h-12 w-12 rounded-lg text-orange grid place-items-center font-bold">
         {/* Placeholder icon */}
-        <span>{Icon ? <Icon /> : null}</span>
+        <span>{Icon ? <Icon className="h-12 w-12" /> : null}</span>
       </div>
-      <h3 className="text-lg text-center font-semibold mb-2 bg-clip-text text-deep-blue bg-linear-to-r  from-orange to-deep-blue group-hover:text-transparent transition-colors duration-400 ease-out">
+      <h3 className="text-xl text-center font-semibold mb-6 bg-clip-text text-deep-blue bg-linear-to-r  from-orange to-deep-blue group-hover:text-transparent transition-colors duration-400 ease-out">
         {title}
       </h3>
-      <p className="text-sm text-gray-600  leading-relaxed text-center">
+      <p className="text-lg  text-gray-600  leading-relaxed text-center">
         {description}
       </p>
     </article>
@@ -289,29 +294,29 @@ const Features = () => {
   );
 
   return (
-    <section
-      className="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-24"
-      id="features">
-      <header className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-deep-blue">
-          Powerful Features
-        </h2>
-        <p className="text-gray-600 mt-2">
-          Explore and Discover your next Investment oppourtunity right here! On
-          our platform.
-        </p>
-      </header>
+    <section className="w-full bg-white px-5 py-20" id="services">
+      <div className=" max-w-[1440px] mx-auto " id="features">
+        <header className="text-center mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold text-deep-blue ">
+            Powerful Features
+          </h2>
+          <p className="text-gray-600 mt-2 text-lg">
+            Explore and Discover your next Investment oppourtunity right here!
+            On our platform.
+          </p>
+        </header>
 
-      <Slider
-        items={items}
-        visibleCount={4}
-        breakpoints={{ base: 1, sm: 2, lg: 3, xl: 4 }}
-        slideBy={1}
-        loop={true}
-        autoplay
-        autoplayInterval={4000}
-        renderItem={(f) => <FeatureCard {...f} />}
-      />
+        <Slider
+          items={items}
+          visibleCount={3}
+          breakpoints={{ base: 1, sm: 2, lg: 3 }}
+          slideBy={1}
+          loop={true}
+          autoplay
+          autoplayInterval={4000}
+          renderItem={f => <FeatureCard {...f} />}
+        />
+      </div>
     </section>
   );
 };

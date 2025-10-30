@@ -8,11 +8,13 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "#" },
     { name: "Our Service", href: "#features" },
+    { name: "About Us", href: "#about" },
   ];
 
   const usefulLinks = [
     { name: "Privacy Policy", href: "#" },
     { name: "Terms & Condition", href: "#" },
+    { name: "Newsletter", href: "#" },
   ];
 
   const socials = [
@@ -24,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="mt-20 py-20 bg-footer-bg text-white"
+      className="py-20 bg-footer-bg text-white"
       id="contact">
       <div className="max-w-[1440px] px-5 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">

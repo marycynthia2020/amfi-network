@@ -12,7 +12,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl  leading-relaxed max-w-3xl ">
             Amfi Network is a multi-sector development company committed to Leading investments across real estate, agribusiness, energy, and finance to drive sustainable economic development across Africa.
           </p>
-          <Button children="explore our setors" href="#features" />
+          <Button children="explore our services" href="#services" />
         </div>
       </div>
     </section>

@@ -36,7 +36,7 @@ const NavBar = () => {
 
         {/* navigation */}
         <div
-          className={`w-full flex flex-col md:flex-row gap-4 gap-y-10 md:items-center  md:justify-between ${
+          className={`w-full flex flex-col md:flex-row gap-4 gap-y-5 md:items-center  md:justify-between ${
             isOpen ? "" : "hidden md:flex "
           }`}
         >
@@ -56,7 +56,7 @@ const NavBar = () => {
             ))}
           </ul>
           <div className="">
-            <Button children="join us today" href="#CTA" />
+            <Button children="join us today" href="#contact" />
           </div>
         </div>
       </div>
